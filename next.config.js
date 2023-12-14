@@ -16,8 +16,8 @@ const nextConfig = {
 	 *
 	 * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
 	 */
-	basePath: "/murapa96.github.io/",
-	assetPrefix: "/murapa96.github.io/",
+	basePath: "/murapa96.github.io",
+	assetPrefix: "/murapa96.github.io",
   
 	/**
 	 * Disable server-based image optimization. Next.js does not support
