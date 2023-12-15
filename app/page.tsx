@@ -2,10 +2,10 @@
  * v0 by Vercel.
  * @see https://v0.dev/t/U8yEWsMG95L
  */
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { CardHeader, CardContent, Card } from "@/components/ui/card"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { CardHeader, CardContent, Card } from "@/components/ui/card";
 
 export default function Component() {
   return (
@@ -16,22 +16,37 @@ export default function Component() {
           <span className="ml-2 font-bold">Murapa96</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Home
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             About
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Projects
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+          <Link
+            className="text-sm font-medium hover:underline underline-offset-4"
+            href="#"
+          >
             Contact
           </Link>
         </nav>
       </header>
       <main className="flex-1 p-6">
-        <section className="w-full pt-24 md:pt-48 lg:pt-64 bg-gradient-to-r from-green-400 to-blue-500" id="home">
+        <section
+          className="w-full pt-24 md:pt-48 lg:pt-64 bg-gradient-to-r from-green-400 to-blue-500"
+          id="home"
+        >
           <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
             <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
               <div>
@@ -41,7 +56,8 @@ export default function Component() {
               </div>
               <div className="flex flex-col items-start space-y-4">
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  I'm Murapa96, a full-stack developer with a passion for creating web applications.
+                  I'm Murapa96, a full-stack developer with a passion for
+                  creating web applications.
                 </p>
                 <Button className="bg-white text-black">Learn More</Button>
               </div>
@@ -53,9 +69,12 @@ export default function Component() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <Badge variant="secondary">My Projects</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Check out some of my work.</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Check out some of my work.
+                </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  I've worked on a variety of projects, from simple websites to complex web applications.
+                  I've worked on a variety of projects, from simple websites to
+                  complex web applications.
                 </p>
               </div>
             </div>
@@ -65,7 +84,9 @@ export default function Component() {
                   <h3 className="text-lg font-bold">Project 1</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">A brief description of the project.</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    A brief description of the project.
+                  </p>
                   <Button>View Project</Button>
                 </CardContent>
               </Card>
@@ -74,7 +95,9 @@ export default function Component() {
                   <h3 className="text-lg font-bold">Project 2</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">A brief description of the project.</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    A brief description of the project.
+                  </p>
                   <Button>View Project</Button>
                 </CardContent>
               </Card>
@@ -83,7 +106,9 @@ export default function Component() {
                   <h3 className="text-lg font-bold">Project 3</h3>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">A brief description of the project.</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    A brief description of the project.
+                  </p>
                   <Button>View Project</Button>
                 </CardContent>
               </Card>
@@ -95,12 +120,17 @@ export default function Component() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <Badge variant="secondary">Contact Me</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in touch</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Get in touch
+                </h2>
               </div>
             </div>
             <div className="mx-auto max-w-4xl">
               <form>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-400" htmlFor="name">
+                <label
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-400"
+                  htmlFor="name"
+                >
                   Full Name
                 </label>
                 <input
@@ -110,7 +140,10 @@ export default function Component() {
                   required
                   type="text"
                 />
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-400 mt-4" htmlFor="email">
+                <label
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-400 mt-4"
+                  htmlFor="email"
+                >
                   Email Address
                 </label>
                 <input
@@ -120,7 +153,10 @@ export default function Component() {
                   required
                   type="email"
                 />
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-400 mt-4" htmlFor="message">
+                <label
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-400 mt-4"
+                  htmlFor="message"
+                >
                   Message
                 </label>
                 <textarea
@@ -128,7 +164,7 @@ export default function Component() {
                   id="message"
                   name="message"
                   required
-                  rows="4"
+                  rows={4}
                 />
                 <Button className="mt-4">Submit</Button>
               </form>
@@ -137,10 +173,12 @@ export default function Component() {
         </section>
       </main>
       <footer className="h-20 flex items-center justify-center border-t">
-        <p className="text-gray-500 dark:text-gray-400">© Murapa96. All rights reserved.</p>
+        <p className="text-gray-500 dark:text-gray-400">
+          © Murapa96. All rights reserved.
+        </p>
       </footer>
     </div>
-  )
+  );
 }
 
 function UserIcon(props) {
@@ -160,5 +198,5 @@ function UserIcon(props) {
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
       <circle cx="12" cy="7" r="4" />
     </svg>
-  )
+  );
 }
