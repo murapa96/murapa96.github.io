@@ -1,26 +1,39 @@
 /**
  * v0 by Vercel.
- * @see https://v0.dev/t/U8yEWsMG95L
+ * @see https://v0.dev/t/wLT8DuUcaZj
  */
+import dynamic from "next/dynamic"
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import {
+  CardTitle,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  Card,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CardHeader, CardContent, Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 export default function Component() {
-  return (
-    <div className="flex flex-col min-h-screen bg-[#121212] text-white">
+
+	const Typing = dynamic(() => import('@/components/custom/typing'), { ssr: false });
+	return (
+    <div className="flex flex-col min-h-screen">
       <header className="px-4 lg:px-6 h-14 flex items-center">
         <Link className="flex items-center justify-center" href="#">
-          <UserIcon className="h-6 w-6" />
-          <span className="ml-2 font-bold">Murapa96</span>
+          <Avatar>
+            <AvatarImage src="/avatar.jpg" alt="Avatar" />
+          </Avatar>
+          <span className="sr-only">My Portfolio</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#"
           >
-            Home
+            Projects
           </Link>
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
@@ -32,171 +45,108 @@ export default function Component() {
             className="text-sm font-medium hover:underline underline-offset-4"
             href="#"
           >
-            Projects
-          </Link>
-          <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
             Contact
           </Link>
         </nav>
       </header>
-      <main className="flex-1 p-6">
-        <section
-          className="w-full pt-24 md:pt-48 lg:pt-64 bg-gradient-to-r from-green-400 to-blue-500"
-          id="home"
-        >
-          <div className="px-4 md:px-6 space-y-10 xl:space-y-16">
-            <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-              <div>
-                <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] text-[#ffffff]">
-                  Welcome to my Portfolio
-                </h1>
-              </div>
-              <div className="flex flex-col items-start space-y-4">
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  I'm Murapa96, a full-stack developer with a passion for
-                  creating web applications.
-                </p>
-                <Button className="bg-white text-black">Learn More</Button>
-              </div>
-            </div>
+      <main className="flex-1">
+        <section className="relative h-[70vh]">
+          <img
+            alt="Background"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            height="800"
+            src="/avatar.jpg"
+            style={{
+              aspectRatio: "1920/800",
+              objectFit: "cover",
+            }}
+            width="1920"
+          />
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+            <Typing strings={[
+							  "Hello, World!",
+			  "I'm a Web Developer.",
+			  "I'm a Designer.",
+			  "I'm a Student.",
+			  "I'm Murapa"
+			]} delay={300} loop={false} />
+            <p className="mt-4 max-w-lg mx-auto">
+              Showcasing my best work in web development and design.
+            </p>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32" id="projects">
+        <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container space-y-12 px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge variant="secondary">My Projects</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out some of my work.
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  I've worked on a variety of projects, from simple websites to
-                  complex web applications.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-              <Card className="bg-[#232323] text-white rounded-lg shadow-lg overflow-hidden">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center">
+              My Projects
+            </h2>
+            <div className="mx-auto grid items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3">
+              <Card>
                 <CardHeader>
-                  <h3 className="text-lg font-bold">Project 1</h3>
+                  <CardTitle>Project 1</CardTitle>
+                  <Badge>Web Development</Badge>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    A brief description of the project.
+                  <img
+                    alt="Project 1"
+                    className="w-full h-48 object-cover"
+                    height="200"
+                    src="/placeholder.svg"
+                    style={{
+                      aspectRatio: "350/200",
+                      objectFit: "cover",
+                    }}
+                    width="350"
+                  />
+                  <p className="mt-4 text-gray-500">
+                    A brief description of the project...
                   </p>
-                  <Button>View Project</Button>
                 </CardContent>
-              </Card>
-              <Card className="bg-[#232323] text-white rounded-lg shadow-lg overflow-hidden">
-                <CardHeader>
-                  <h3 className="text-lg font-bold">Project 2</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    A brief description of the project.
-                  </p>
-                  <Button>View Project</Button>
-                </CardContent>
-              </Card>
-              <Card className="bg-[#232323] text-white rounded-lg shadow-lg overflow-hidden">
-                <CardHeader>
-                  <h3 className="text-lg font-bold">Project 3</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    A brief description of the project.
-                  </p>
-                  <Button>View Project</Button>
-                </CardContent>
+                <CardFooter>
+                  <Link className="text-sm font-medium underline" href="#">
+                    View Project
+                  </Link>
+                </CardFooter>
               </Card>
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32" id="contact">
-          <div className="container space-y-12 px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge variant="secondary">Contact Me</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Get in touch
-                </h2>
-              </div>
-            </div>
-            <div className="mx-auto max-w-4xl">
-              <form>
-                <label
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-400"
-                  htmlFor="name"
-                >
-                  Full Name
-                </label>
-                <input
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-[#232323] text-white"
-                  id="name"
-                  name="name"
-                  required
-                  type="text"
-                />
-                <label
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-400 mt-4"
-                  htmlFor="email"
-                >
-                  Email Address
-                </label>
-                <input
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-[#232323] text-white"
-                  id="email"
-                  name="email"
-                  required
-                  type="email"
-                />
-                <label
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-400 mt-4"
-                  htmlFor="message"
-                >
-                  Message
-                </label>
-                <textarea
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-[#232323] text-white"
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                />
-                <Button className="mt-4">Submit</Button>
-              </form>
-            </div>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+              Contact Me
+            </h2>
+            <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              If you have any questions or want to discuss a project or job
+              opportunity, feel free to send me a message.
+            </p>
+            <form className="w-full max-w-md mx-auto space-y-4">
+              <Input className="w-full" placeholder="Name" type="text" />
+              <Input className="w-full" placeholder="Email" type="email" />
+              <textarea
+                className="w-full h-32 resize-none"
+                placeholder="Message"
+              />
+              <Button className="w-full" type="submit">
+                Send Message
+              </Button>
+            </form>
           </div>
         </section>
       </main>
-      <footer className="h-20 flex items-center justify-center border-t">
-        <p className="text-gray-500 dark:text-gray-400">
-          © Murapa96. All rights reserved.
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
+          © My Portfolio. All rights reserved.
         </p>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Privacy Policy
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4" href="#">
+            Terms of Service
+          </Link>
+        </nav>
       </footer>
     </div>
-  );
-}
-
-function UserIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-      <circle cx="12" cy="7" r="4" />
-    </svg>
   );
 }
