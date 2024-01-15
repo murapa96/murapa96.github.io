@@ -21,7 +21,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "20.10.4",
+    "@types/node": "20.11.1",
     "@types/react": "18.2.45",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
